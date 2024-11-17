@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
-import CourseList from "./components/CourseList";
-import CourseForm from "./components/CourseForm";
-import CourseDetails from "./components/CourseDetails";
-import Footer from "./components/Footer";
-import LoginSignup from "./components/LoginSignup";
+import React, { useState } from 'react';
+import Header from './components/Header.js';
+import CourseList from './components/CourseList.js';
+import CourseForm from './components/CourseForm.js';
+import CourseDetails from './components/CourseDetails.js';
+import Footer from './components/Footer.js';
+import LoginSignup from './components/LoginSignup.js';
 
 const App = () => {
   const [courses, setCourses] = useState([
@@ -81,7 +81,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#f4f6f9' }}>
       {/* Header with dynamic view management */}
       <Header
         view={view}
@@ -89,10 +89,12 @@ const App = () => {
         loggedInUser={loggedInUser}
         onLogout={() => setLoggedInUser(null)}
       />
-      <div style={{ padding: "1rem" }}>
+      
+      <div style={{ padding: "20px", maxWidth: "1200px", margin: "0 auto" }}>
+        {/* Conditional Rendering for Views */}
         {view === "add" && (
           <>
-            <h2>Add Courses</h2>
+            <h2 style={{ color: '#333' }}>Add Courses</h2>
             <CourseForm addCourse={addCourse} />
             <CourseList
               courses={courses}
@@ -105,9 +107,10 @@ const App = () => {
             <CourseDetails course={selectedCourse} />
           </>
         )}
+        
         {view === "enrolled" && (
           <>
-            <h2>Enrolled Courses</h2>
+            <h2 style={{ color: '#333' }}>Enrolled Courses</h2>
             <CourseList
               courses={courses.filter((course) => course.enrolled)}
               onSelectCourse={setSelectedCourse}
@@ -119,9 +122,10 @@ const App = () => {
             <CourseDetails course={selectedCourse} />
           </>
         )}
+        
         {view === "saved" && (
           <>
-            <h2>Saved for Later</h2>
+            <h2 style={{ color: '#333' }}>Saved for Later</h2>
             <CourseList
               courses={courses.filter((course) => course.saved)}
               onSelectCourse={setSelectedCourse}
@@ -134,6 +138,7 @@ const App = () => {
           </>
         )}
       </div>
+      
       <Footer />
     </div>
   );
