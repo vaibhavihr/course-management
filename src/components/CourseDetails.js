@@ -2,7 +2,7 @@ import React from "react";
 
 const CourseDetails = ({ course }) => {
   if (!course) {
-    return <p>Select a course to see the details.</p>;
+    return <p><b>Select a course to see the details.</b></p>;
   }
 
   return (
