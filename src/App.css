@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   background-color: #f4f7fb; /* Lighter background for the main app */
+  padding: 20px; /* Added padding for spacing */
 }
 
 /* Logo Style */
@@ -81,4 +82,72 @@
 
 .cta-btn:focus {
   outline: none; /* Removes default focus outline */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For medium screens (e.g., laptops) */
+@media (max-width: 1366px) {
+  .App-header {
+    font-size: calc(8px + 2vmin); /* Adjust font size for laptops */
+    padding: 40px; /* Increased padding on larger screens */
+  }
+
+  .cta-btn {
+    font-size: 1.2em;
+    padding: 16px 32px;
+  }
+
+  .App-logo {
+    height: 30vmin; /* Adjust logo size for better fit */
+  }
+
+  .App-link {
+    font-size: 1.1em;
+    padding: 10px 20px;
+  }
+}
+
+/* For smaller screens (e.g., tablets and phones) */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(12px + 2vmin); /* Adjust font size for smaller screens */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .cta-btn {
+    font-size: 1em;
+    padding: 12px 24px; /* Adjust button padding */
+  }
+
+  .App-logo {
+    height: 25vmin; /* Adjust logo size */
+  }
+
+  .App-link {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+
+/* For very small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+  .App-header {
+    font-size: calc(14px + 2vmin); /* Adjust font size for mobile */
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .cta-btn {
+    font-size: 0.9em;
+    padding: 10px 20px; /* Smaller button */
+  }
+
+  .App-logo {
+    height: 20vmin; /* Smaller logo for mobile */
+  }
+
+  .App-link {
+    font-size: 0.9em;
+    padding: 6px 12px;
+  }
 }
